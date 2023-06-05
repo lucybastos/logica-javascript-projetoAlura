@@ -1,0 +1,38 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+	
+	var screen = document.querySelector ("canvas");
+	var paintbrush = screen.getContext ("2d");
+	paintbrush.fillStyle = "white";
+	paintbrush.fillRect (0,0,600,400);
+
+			function drawCircle (x, y, ray,){
+
+			paintbrush.fillStyle = "lightgray";
+			paintbrush.beginPath();
+			paintbrush.arc(x,y,ray, 0, 2 * Math.PI);
+			paintbrush.fill();
+
+		}
+
+			function clearScreen(){
+			paintbrush.clearRect(0,0,600,400);
+		}
+
+			var x = 20;
+			var direction = 1;
+		  	
+		  	function refreshingPage() {
+			    clearScreen();
+			    if (x > 600) { direction = -1;
+			    } else if (x < 0) {
+			      direction = 1;
+			    }
+			    drawCircle(x, 20, 10);
+			    x = x + direction;
+		  }
+
+		  setInterval(refreshingPage, 10);
+	
+</script>

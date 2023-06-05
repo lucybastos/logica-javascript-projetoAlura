@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+
+<script>
+    function breakLine() {
+        document.write("<br><br>");
+    }
+
+    function show(sentence) {
+        document.write("---*---"+ "<h2>" +sentence+ "</h2>" +"---*---");
+        breakLine();
+    }
+
+    var invited = parseInt(prompt("Number of guests: "));
+    var vips = parseInt(prompt("Number of VIP's: "));
+
+    var total = invited + vips;
+
+    show(" The total of guests is " + total+ " ");
+
+</script>

@@ -1,0 +1,25 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector("canvas");
+    var paintbrush = screen.getContext("2d");
+    paintbrush.fillStyle = "lightblue";
+    paintbrush.fillRect(0, 0, 600, 400);
+
+    	function drawCircle (x,y, ray,color){
+    	paintbrush.fillStyle = color;
+        // "lightpink";
+    	paintbrush.beginPath();
+    	paintbrush.arc(x, y, ray, 0, 2 * Math.PI);
+    	paintbrush.fill();
+
+
+    	}
+    	// screen.onclick = drawCircle;
+
+    	drawCircle(50,20,10,"lightpink");
+    	drawCircle(100,40,50,"lightgreen");
+
+
+</script>

@@ -1,0 +1,49 @@
+<canvas width="600"  height="400"></canvas>
+
+<script>
+    
+	    var screen = document.querySelector('canvas');
+	    var paintbrush = screen.getContext('2d');
+
+	    paintbrush.fillStyle = 'pink';
+	    paintbrush.fillRect(0, 0, 600, 400);
+	    var colours = ["purple", "yellow", "orange"];
+	    var actualColour = 0; //It stats with the blue colour!!
+	    var ray = 10;
+	    
+	    function drawCircles (about){
+
+	    	// console.log(about);
+	    	// alert ("Click, click, BOOM!");
+	    	var x = about.pageX - screen.offsetLeft;
+	    	var y = about.pageY - screen.offsetTop;
+	    	
+	    	console.log(" click position: "+ x + ", "+y);
+
+	    	if (about.shiftKey){
+	    		ray = ray + 40;
+	    		actualColour = [1];
+	    	}
+	    	paintbrush.fillStyle = colours[actualColour];
+	    	paintbrush.beginPath ();
+	    	paintbrush.arc(x, y, ray, 0, 2*3.14);
+	   		paintbrush.fill();
+	    	
+	    	//alert (x + "," + y);
+	    }
+
+	    screen.onclick= drawCircles;
+
+
+    	// function changeColour() {
+	    	// actualColour++;
+	    	
+	    	// if (actualColour >= colours.length) {
+	     	// actualColour = 0; 
+	   	 // }
+	        // return false;
+	   	 // }
+
+    	 // screen.oncontextmenu = changeColour;
+
+</script>

@@ -1,0 +1,36 @@
+<canvas width="600" height="400"></canvas>
+
+<br>Choose a colour <input type="color">
+
+<script>
+	var palette = document.querySelector ("input");
+	var screen = document.querySelector("canvas");
+	var paintbrush = screen.getContext("2d");
+	paintbrush.fillStyle = 'orange';
+	paintbrush.fillRect(0, 0, 600, 400);
+	var draw = false;
+
+  function drawCircle(event) {
+    if (draw) {
+      var x = event.pageX - screen.offsetLeft;
+      var y = event.pageY - screen.offsetTop;
+      paintbrush.fillStyle = palette.value;
+      paintbrush.beginPath();
+      paintbrush.arc(x, y, 10, 0, 2 * 3.14);
+      paintbrush.fill();
+    }
+    console.log(x + ',' + y);
+  }
+  screen.onmousemove = drawCircle;
+
+  function drawingActive() {
+    draw = true;
+  }
+
+  function drawingUnactive() {
+    draw = false;
+  }
+
+	  screen.onmousedown = drawingActive;
+	  screen.onmouseup = drawingUnactive;
+</script>

@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function breakTheLine() {
+
+    	document.write("<br>");
+    	document.write("<br>");
+}
+
+	function show(sentence) {
+
+    	document.write(sentence);
+    	breakTheLine();
+}
+
+	var cupYear = 1930;
+	alert("There was a world cup in the year of "+cupYear);
+
+	var currentYear = parseInt (prompt("What is the current year?"));
+
+	while (cupYear < currentYear){
+		alert ("There was a world cup in " +cupYear);
+		cupYear = cupYear + 4;
+	}
+	alert ("The end");
+
+
+</script>

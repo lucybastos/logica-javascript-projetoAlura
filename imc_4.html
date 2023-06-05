@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<script>
+
+    	function breakLine() {
+
+       	 document.write("<br>");
+       	 document.write("<br>");
+}
+
+    	function show(sentence) {
+
+       	 document.write(sentence);
+       	 breakLine();
+}
+
+    	function bmi(height, weight){
+
+        	return weight / (height * height);
+}
+
+	var name = prompt ("Please, tell me your name");
+	var height = prompt (name + ", can you tell me your height, please");
+	var weight = prompt (name + ", now, tell me your weight");
+
+	var bmi = bmi(height, weight);
+
+	document.write(name + ", your BMI is: " + bmi + ".");
+
+	if(bmi < 18.5){
+		show ("You are below the average recommended by the OMS");
+	}
+	
+	if (bmi > 35){
+		show ("You are beyond the average recommended by the OMS.");
+	}
+
+	if (bmi >= 18.5 && bmi <= 35){
+		
+			show (" Congratulations, you are excellent!");
+		
+	}
+	
+
+</script>

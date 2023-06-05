@@ -1,0 +1,35 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var screen = document.querySelector('canvas');
+    var paintbrush = screen.getContext('2d');
+
+    paintbrush.fillStyle = 'lightgray';
+    paintbrush.fillRect(0, 0, 600, 400);
+
+    var ray = 10;
+
+    function drawCircle(x, y, ray, color) {
+
+        paintbrush.fillStyle = color;
+        paintbrush.beginPath();
+        paintbrush.arc(x, y, ray, 0, 2 * Math.PI);
+        paintbrush.fill();
+    }
+
+    drawCircle(300,200, ray + 20, 'red'); // maior círculo
+    drawCircle(300,200, ray + 10, 'white');
+    drawCircle(300,200, ray, 'red'); // menor circulo
+
+    function shoot(event) {
+
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+        console.log = (x+", "+y);
+       
+    }
+
+    screen.onclick = shoot;
+
+</script>

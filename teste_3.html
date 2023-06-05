@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+	
+	function breaktheline(){
+		document.write("<br>");
+	}
+
+	function show (sentence){
+		document.write (sentence);
+		breaktheline();
+	}
+
+	//last your the total of your team's punctuation was: 28;
+
+	var lastYearPoints = 28;
+	var thisYearPoints = parseInt(prompt("Can you please type the qquantity of points this year?"));
+
+	if (thisYearPoints == lastYearPoints){
+		show("It is the same");
+
+
+	}if (thisYearPoints >lastYearPoints ){
+		show("Your team is better than last year" );
+	} if  (thisYearPoints < lastYearPoints){
+		show("Your team is worse than last year");
+	} 
+
+
+</script>

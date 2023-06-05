@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Show text</button>
+
+<script>
+
+    var input = document.querySelector("input");
+
+    function showText() {
+    	alert ("Your text was: "+ input.value);
+    }
+   	  input.value = "";
+   	  input.focus();
+
+    var button = document.querySelector("button");
+
+    button.onclick = showText;
+
+</script>

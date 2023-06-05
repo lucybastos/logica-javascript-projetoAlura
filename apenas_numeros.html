@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+	function breakTheLine(){
+		docvument.write("<br><br>");
+
+	}
+
+	function show (sentence){
+		document.write(sentence);
+		breakTheLine();
+	}
+
+	var age = parseInt(prompt("Please, type below your age"));
+
+
+	while (isNaN (age)){
+		age = parseInt(prompt("Please, type below your age"));
+
+	}
+	alert ("Age:" + age);
+
+</script>

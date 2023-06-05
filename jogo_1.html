@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function breakLine() {
+
+        document.write("<br>");
+        document.write("<br>");
+}
+
+    function show(sentence) {
+
+        document.write(sentence);
+        breakLine();
+}
+
+	var numberThought = Math.round(Math.random() * 10);
+	console.log(numberThought);
+	
+	var guess = parseInt(prompt("Guess the number"));
+
+	if (guess == numberThought){
+		show ("You just hit the bullseye!!");
+	} else {
+		show ("Perhaps you could try again? This time the number thought by the machine was " +guess);
+	}
+	
+	//else if (guess != numberThought) {
+		//show ("Perhaps you could try again?")
+	//}
+
+
+</script>

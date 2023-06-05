@@ -1,0 +1,76 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Click here</button>
+
+<script>
+	
+		function raffle() {
+
+	       return Math.round(Math.random() * 10);
+
+	    }
+
+	    function raffleNumbers(quantity) {
+
+	        var secrets = [];
+
+	        var number = 1;
+
+	        while (number <= quantity){
+
+ 				var randomNumber = raffle();
+            
+            	var foundNumber = false;
+	        
+
+	        if (randomNumber !== 0) {
+
+	        	for (var position = 0; position <secrets.length; position++){
+	        		if (secrets [position] == randomNumber){
+	        			foundNumber = true;
+	        			break;
+	        		}
+	        	}
+	        	if (foundNumber == false){
+	        		secrets.push (randomNumber);
+	        		number++
+	        	}
+	        }
+	}	
+	        return secrets;
+
+	    }
+
+	    var secrets = raffleNumbers(3);
+	    console.log(secrets);
+
+	    var input = document.querySelector("input");
+	    input.focus();
+
+	 
+	 function verify (){
+
+	 	var foundNumber = false;
+
+	    for (var position =0; position < secrets.length; position++) {
+
+		    	if (input.value == secrets[position]) {
+		    		alert ("Good choice!");
+		    		foundNumber = true;
+		    		break;
+		    		} 
+
+		    }
+		  	 	 if (foundNumber == false) {
+		   	 		alert("Mistaken!");
+					}
+
+				input.value = "";
+				input.focus();
+		}	
+
+    var button = document.querySelector("button");
+    button.onclick = verify;
+
+	</script>

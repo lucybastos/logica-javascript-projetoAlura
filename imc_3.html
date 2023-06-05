@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<script>
+	
+		function breakTheLine (){
+			document.write ("<br><br>");
+
+
+	}
+
+		function show (sentence){
+			document.write("***"+ sentence + "***");
+			breakTheLine();
+
+		}
+//Body Mass Index (BMI) is a person's weight in kilograms (or pounds) divided by the square of height in meters (or feet).//
+
+		function bmi (weight, height){
+
+			//var bmi = weight /(height*height);
+			//return bmi;
+			return weight /(height*height);
+		
+			//whatever you return, will be given ahead.//
+		}
+
+	//var bmiDaniel = bmi(84,1.79);
+	//var bmiLuciana = bmi(63,1.64);
+
+	//show(bmiDaniel);
+	//show(bmiLuciana);
+
+	//show (bmi(84,1.79)+bmi(63,1.64));
+	var bmiDaniel = bmi(84,1.79);
+	var bmiLuciana = bmi(63,1.64);
+	var totalbmi = bmiDaniel+bmiLuciana;
+
+	document.write ("The sum of both BMI is: " + totalbmi )
+
+</script>

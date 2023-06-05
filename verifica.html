@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<input/>
+
+<button> Click here and check your response! </button>
+
+<script>
+
+	var secret = Math.round(Math.random()*10);
+	 console.log(secret);
+	
+	var response = document.querySelector("input");
+	response.focus();
+
+
+	function verify(){
+
+		if (response.value == secret){
+			alert ("IT'S A MATCH!");
+		} else {
+			alert("Not a match");
+		}
+		response.value = "";
+   	 	response.focus();
+	}
+
+	var button = document.querySelector("button");
+
+	button.onclick = verify;
+
+
+</script>

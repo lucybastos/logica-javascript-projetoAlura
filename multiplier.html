@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+
+<script>
+	
+		function breakTheLine(){
+			document.write("<br>");
+
+	}
+
+		function show (sentence){
+			document.write(sentence);
+			breakTheLine();
+	}
+
+	var multiplier = 1;
+
+	//show (7*multiplier);
+
+		while (multiplier <= 20){
+			show (7*multiplier);
+			multiplier = multiplier + 1;
+		}
+
+	show ("The end");
+</script>
